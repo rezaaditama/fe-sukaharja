@@ -1,0 +1,38 @@
+[
+  {
+    "bunga_id": 1,
+    "nama_bunga": "philodedron billitae",
+    "manfaat": "Daya Tarik Visual Unik",
+    "path": "/public/assets/img/philodendronBillietiae.avif",
+    "jenis_bunga": "Varigata"
+  },
+
+  {
+    "bunga_id": 2,
+    "nama_bunga": "Monstera Marble",
+    "manfaat": "Meningkatkan Kualitas Udara dan Interior Decor Mewah",
+    "path": "/public/assets/img/monsteraMarble.jpeg",
+    "jenis_bunga": "Varigata"
+  },
+  {
+    "bunga_id": 3,
+    "nama_bunga": "anthurium king spades",
+    "manfaat": "Pelembab Alami Ruangan",
+    "path": "/public/assets/img/anthuriumKingSpades.jpeg ",
+    "jenis_bunga": "Varigata"
+  },
+  {
+    "bunga_id": 4,
+    "nama_bunga": "anthurium red crystallinum",
+    "manfaat": "Menyejukkan Pandangan dan Memperbaiki suasana Hati",
+    "path": "/public/assets/img/anthuriumRedCrystallinum.jpeg",
+    "jenis_bunga": "Varigata"
+  },
+  {
+    "bunga_id": 5,
+    "nama_bunga": "anthurium king clarinervium",
+    "manfaat": "Cocok Untuk Terapi Visual",
+    "path": "/public/assets/img/anthuriumKingClarinervium.jpeg ",
+    "jenis_bunga": "Varigata"
+  }
+]

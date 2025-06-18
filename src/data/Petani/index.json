@@ -1,0 +1,212 @@
+[
+  {
+    "nik": 101845,
+    "alamat": "Kp.Cliengkong",
+    "nama": "Hamizan Flora",
+    "status": 0,
+    "nama_bunga": ["Philodedron", "Caramel Marbel"]
+  },
+  {
+    "nik": 101846,
+    "alamat": "Kp.Pasir Tengal",
+    "nama": "Alghana Flower",
+    "status": 0,
+    "nama_bunga": ["Monstera Marbel", "Anthurium King Of Spades"]
+  },
+  {
+    "nik": 101847,
+    "alamat": "Kp.Cliengkong",
+    "nama": "Saung Rizki",
+    "status": 0,
+    "nama_bunga": ["Anthurium Red Cristalinum"]
+  },
+  {
+    "nik": 101848,
+    "alamat": "Kp.Cliengkong",
+    "nama": "Syaff Florist",
+    "status": 0,
+    "nama_bunga": ["Anthurium King Clarinervium"]
+  },
+  {
+    "nik": 101849,
+    "alamat": "Kp.Sukasari",
+    "nama": "Bunga Cantik",
+    "status": 0,
+    "nama_bunga": ["Monstera Variegata", "Philodendron Florida Beauty"]
+  },
+  {
+    "nik": 101850,
+    "alamat": "Kp.Cihideung",
+    "nama": "Hijau Daun",
+    "status": 0,
+    "nama_bunga": ["Anthurium Veitchii", "Philodendron Melanochrysum"]
+  },
+  {
+    "nik": 101851,
+    "alamat": "Kp.Pasir Angin",
+    "nama": "Pasir Angin Garden",
+    "status": 0,
+    "nama_bunga": ["Calathea Orbifolia"]
+  },
+  {
+    "nik": 101852,
+    "alamat": "Kp.Caringin",
+    "nama": "Caringin Flower",
+    "status": 0,
+    "nama_bunga": ["Monstera Thai Constellation"]
+  },
+  {
+    "nik": 101853,
+    "alamat": "Kp.Cilember",
+    "nama": "Cilember Garden",
+    "status": 0,
+    "nama_bunga": ["Philodendron Pink Princess", "Anthurium Warocqueanum"]
+  },
+  {
+    "nik": 101854,
+    "alamat": "Kp.Cipelang",
+    "nama": "Florina",
+    "status": 0,
+    "nama_bunga": ["Begonia Maculata"]
+  },
+  {
+    "nik": 101855,
+    "alamat": "Kp.Bojongkoneng",
+    "nama": "Akar Hijaunya",
+    "status": 0,
+    "nama_bunga": ["Alocasia Dragon Scale"]
+  },
+  {
+    "nik": 101856,
+    "alamat": "Kp.Citeureup",
+    "nama": "Florania",
+    "status": 0,
+    "nama_bunga": ["Syngonium Albo", "Caladium Carolyn Whorton"]
+  },
+  {
+    "nik": 101857,
+    "alamat": "Kp.Megamendung",
+    "nama": "Mega Flower",
+    "status": 0,
+    "nama_bunga": ["Philodendron Gloriosum"]
+  },
+  {
+    "nik": 101858,
+    "alamat": "Kp.Cipaku",
+    "nama": "Hijau Segar",
+    "status": 0,
+    "nama_bunga": ["Anthurium Crystallinum"]
+  },
+  {
+    "nik": 101859,
+    "alamat": "Kp.Cigombong",
+    "nama": "Segar Alam",
+    "status": 0,
+    "nama_bunga": ["Philodendron Majestic"]
+  },
+  {
+    "nik": 101860,
+    "alamat": "Kp.Cikaret",
+    "nama": "Florist Indah",
+    "status": 0,
+    "nama_bunga": ["Monstera Adansonii"]
+  },
+  {
+    "nik": 101861,
+    "alamat": "Kp.Semplak",
+    "nama": "Hijau Ceria",
+    "status": 0,
+    "nama_bunga": ["Philodendron Birkin"]
+  },
+  {
+    "nik": 101862,
+    "alamat": "Kp.Babakan",
+    "nama": "Flora Babakan",
+    "status": 0,
+    "nama_bunga": ["Aglaonema Red Kochin"]
+  },
+  {
+    "nik": 101863,
+    "alamat": "Kp.Banjarwaru",
+    "nama": "Banjar Flower",
+    "status": 0,
+    "nama_bunga": ["Anthurium Magnificum"]
+  },
+  {
+    "nik": 101864,
+    "alamat": "Kp.Sindangbarang",
+    "nama": "Sindang Garden",
+    "status": 0,
+    "nama_bunga": ["Monstera Deliciosa"]
+  },
+  {
+    "nik": 101865,
+    "alamat": "Kp.Ciawi",
+    "nama": "Flora Sejuk",
+    "status": 0,
+    "nama_bunga": ["Anthurium Forgetii"]
+  },
+  {
+    "nik": 101866,
+    "alamat": "Kp.Bojonggede",
+    "nama": "Bojong Florist",
+    "status": 0,
+    "nama_bunga": ["Caladium White Christmas"]
+  },
+  {
+    "nik": 101867,
+    "alamat": "Kp.Cibinong",
+    "nama": "Hijau Garden",
+    "status": 0,
+    "nama_bunga": ["Philodendron Plowmanii"]
+  },
+  {
+    "nik": 101868,
+    "alamat": "Kp.Kemang",
+    "nama": "Kemang Flower House",
+    "status": 0,
+    "nama_bunga": ["Syngonium Pink Splash"]
+  },
+  {
+    "nik": 101869,
+    "alamat": "Kp.Cisarua",
+    "nama": "Cisarua Flower",
+    "status": 0,
+    "nama_bunga": ["Monstera Obliqua"]
+  },
+  {
+    "nik": 101870,
+    "alamat": "Kp.Ciomas",
+    "nama": "Taman Ciomas",
+    "status": 0,
+    "nama_bunga": ["Philodendron Micans"]
+  },
+  {
+    "nik": 101871,
+    "alamat": "Kp.Caringin",
+    "nama": "Caringin Segar",
+    "status": 0,
+    "nama_bunga": ["Anthurium Regale"]
+  },
+  {
+    "nik": 101872,
+    "alamat": "Kp.Cikaret",
+    "nama": "Cikaret Florist",
+    "status": 0,
+    "nama_bunga": ["Aglaonema Widuri"]
+  },
+  {
+    "nik": 101873,
+    "alamat": "Kp.Sindangbarang",
+    "nama": "Hijau Mekar",
+    "status": 0,
+    "nama_bunga": ["Philodendron White Knight"]
+  },
+  {
+    "nik": 101874,
+    "alamat": "Kp.Ciawi",
+    "nama": "Taman Ciawi",
+    "status": 0,
+    "nama_bunga": ["Calathea Makoyana"]
+  }
+]
