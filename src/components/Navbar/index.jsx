@@ -3,7 +3,8 @@ import { Link } from 'react-router-dom';
 const Navbar = () => {
   return (
     <nav className='fixed top-0 w-full z-50 flex justify-between items-center h-16 px-8 text-white font-bold bg-black/65'>
-      <div>
+      <div className='flex space-x-2 items-center'>
+        <img src='/public/assets/img/logo.png' alt='' className='w-10' />
         <h1 className='uppercase text-2xl'>Sukaharja</h1>
       </div>
       <div className='space-x-4 text-base'>
