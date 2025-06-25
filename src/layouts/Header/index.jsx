@@ -9,7 +9,7 @@ const Header = () => {
       className={'min-h-screen'}
     >
       <Overlay>
-        <h1 className='text-3xl font-bold'>
+        <h1 className='text-3xl font-bold text-white'>
           Selamat Datang Di Website <br /> Kelurahan Sukaharja kecamatan Cijeruk
           Kabupaten Bogor
         </h1>
