@@ -14,21 +14,21 @@ const Footer = () => {
         <section>
           <h3 className='text-lg font-semibold mb-3'>Quick Links</h3>
           <div className='flex flex-col space-y-2 text-sm'>
-            <Link to='#' className='hover:text-gray-400'>
+            <a href='#header' className='hover:text-gray-400'>
               Tentang Kami
-            </Link>
-            <Link to='#' className='hover:text-gray-400'>
+            </a>
+            <a href='#potensiBungaSection' className='hover:text-gray-400'>
               Potensi Bunga
-            </Link>
-            <Link to='#' className='hover:text-gray-400'>
+            </a>
+            <a href='#potensiWisataSection' className='hover:text-gray-400'>
               Potensi Wisata
-            </Link>
-            <Link to='#' className='hover:text-gray-400'>
+            </a>
+            <a href='#potensiPetaniSection' className='hover:text-gray-400'>
               Petani Lokal
-            </Link>
-            <Link to='#' className='hover:text-gray-400'>
+            </a>
+            <a href='#' className='hover:text-gray-400'>
               Laporan Pengaduan
-            </Link>
+            </a>
           </div>
         </section>
         <section>
