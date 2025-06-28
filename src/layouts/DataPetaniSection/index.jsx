@@ -1,10 +1,10 @@
 import { useEffect, useState } from 'react';
-import { getAllPetani } from '../../Services/petani.service';
+import { getAllPetani, postPetani } from '../../Services/petani.service';
 import Button from '../../components/Button';
 import Modal from '../../components/Modal';
 import Input from '../../components/Input/Index';
 
-const DataPetaniSection = ({ id }) => {
+const DataPetaniSection = () => {
   const [petani, setPetani] = useState([]);
   const [showModal, setShowModal] = useState(false);
 
@@ -20,8 +20,31 @@ const DataPetaniSection = ({ id }) => {
     fetchDataPetani();
   }, []);
 
+  const handleFormPetani = async (e) => {
+    e.preventDefault();
+    const value = {
+      nik_petani: Number(e.target.nik.value),
+      alamat_petani: e.target.alamat_petani.value,
+      nama_petani: e.target.nama_petani.value,
+      nama_bunga: e.target.nama_bunga.value,
+    };
+
+    try {
+      await postPetani(value);
+      console.log(value);
+      alert('Data berhasil dikirim');
+      setShowModal(false);
+      const response = await getAllPetani();
+      setPetani(response.data);
+    } catch (error) {
+      console.error('Gagal mengirim data:', error);
+      console.log(value);
+      alert('Terjadi kesalahan saat mengirim data.');
+    }
+  };
+
   return (
-    <div id='dataPetaniSection' className='w-full py-10 px-5'>
+    <div id='dataPetaniSection' className='w-full p-10 px-5'>
       <h1 className='text-center font-bold uppercase text-3xl border-b-1 pb-2 border-gray-300'>
         Data Petani
       </h1>
@@ -70,17 +93,15 @@ const DataPetaniSection = ({ id }) => {
           Daftar Sekarang
         </Button>
       </div>
-
-      {/* Show Modal */}
       {showModal && (
-        <Modal>
-          <div className=''>
+        <Modal onClose={() => setShowModal(null)}>
+          <div>
             <h2 className='text-2xl font-bold text-center'>Daftar Petani</h2>
             <p className='text-center text-sm'>
               Silahkan isi data diri anda sesuai dengan KTP
             </p>
           </div>
-          <form className='space-y-2 py-2'>
+          <form className='space-y-2 py-2' onSubmit={handleFormPetani}>
             <Input
               label={'NIK'}
               id={'nik'}

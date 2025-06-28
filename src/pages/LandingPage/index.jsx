@@ -5,6 +5,7 @@ import WisataSection from '../../layouts/WisataSection';
 import DataPetaniSection from '../../layouts/DataPetaniSection';
 import Footer from '../../components/Footer';
 import { useEffect, useRef, useState } from 'react';
+import PengaduanSection from '../../layouts/PengaduanSection';
 
 const LandingPage = () => {
   const [activeSection, setActiveSection] = useState('');
@@ -12,6 +13,7 @@ const LandingPage = () => {
   const bungaRef = useRef(null);
   const wisataRef = useRef(null);
   const petaniRef = useRef(null);
+  const pengaduanRef = useRef(null);
 
   useEffect(() => {
     const section = [
@@ -19,6 +21,7 @@ const LandingPage = () => {
       { id: 'bunga', ref: bungaRef },
       { id: 'wisata', ref: wisataRef },
       { id: 'petani', ref: petaniRef },
+      { id: 'pengaduan', ref: pengaduanRef },
     ];
 
     const scroll = new IntersectionObserver(
@@ -50,6 +53,9 @@ const LandingPage = () => {
       </div>
       <div id='potensiPetaniSection' ref={petaniRef}>
         <DataPetaniSection />
+      </div>
+      <div id='pengaduanSection' ref={pengaduanRef}>
+        <PengaduanSection />
       </div>
       <Footer />
     </>

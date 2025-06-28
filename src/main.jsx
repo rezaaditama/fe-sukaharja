@@ -4,6 +4,7 @@ import './index.css';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import LandingPage from './pages/LandingPage';
 import LoginPage from './pages/LoginPage';
+import DashboardAdmin from './pages/DashboardAdmin';
 
 const router = createBrowserRouter([
   {
@@ -12,8 +13,12 @@ const router = createBrowserRouter([
   },
   {
     path: '/login',
-    element: <LoginPage />
-  }
+    element: <LoginPage />,
+  },
+  {
+    path: '/admin',
+    element: <DashboardAdmin />,
+  },
 ]);
 
 createRoot(document.getElementById('root')).render(

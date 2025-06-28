@@ -11,3 +11,16 @@ export const getAllPetani = async () => {
     throw error;
   }
 };
+
+export const postPetani = async (data) => {
+  try {
+    const response = await axios.post(
+      'http://be-reza-sukaharja.yoggaac.com/api/petani/post-petani',
+      data
+    );
+    return response.data;
+  } catch (error) {
+    console.log('error : ' + error);
+    throw error;
+  }
+};

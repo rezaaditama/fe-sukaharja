@@ -29,7 +29,9 @@ const Navbar = ({ activeSection, type }) => {
           >
             Petani Lokal
           </a>
-          <a href='#'>Laporan Pengaduan</a>
+          <a href='#pengaduanSection' className={isActive('pengaduanSection')}>
+            Laporan Pengaduan
+          </a>
         </div>
       )}
     </nav>
