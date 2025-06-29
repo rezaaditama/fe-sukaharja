@@ -1,10 +1,20 @@
+import { useNavigate } from 'react-router-dom';
 import { twMerge } from 'tailwind-merge';
+import LogoutIcon from '../../../public/assets/icons/LogoutIcon';
+import Button from '../Button';
 
 const Navbar = ({ activeSection, type, className = '' }) => {
+  const navigate = useNavigate();
   const isActive = (id) =>
     `hover:text-yellow-500 transition duration-300 ${
       activeSection === id ? 'text-yellow-500 font-extrabold' : ''
     }`;
+
+  const handleLogout = () => {
+    localStorage.removeItem('username');
+    navigate('/');
+  };
+
   return (
     <nav
       className={twMerge(
@@ -41,8 +51,18 @@ const Navbar = ({ activeSection, type, className = '' }) => {
           </a>
         </div>
       ) : (
-        <div className=''>
+        <div className='flex gap-5'>
           <h1 className='uppercase font-bold'>Dashboard Admin</h1>
+          {localStorage.getItem('username') && (
+            <Button onClick={handleLogout}>
+              <LogoutIcon
+                width={25}
+                height={25}
+                stroke='#ef4444'
+                className='hover:scale-125 transition duration-300'
+              />
+            </Button>
+          )}
         </div>
       )}
     </nav>

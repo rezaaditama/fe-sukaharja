@@ -48,3 +48,16 @@ export const updatePetani = async (nik) => {
     throw error;
   }
 };
+
+export const updateDataPetani = async (nik, data) => {
+  try {
+    const response = await axios.put(
+      `http://localhost:4001/api/petani/update-data-petani/${nik}`,
+      data
+    );
+    return response.data;
+  } catch (error) {
+    console.log('error : ' + error);
+    throw error;
+  }
+};

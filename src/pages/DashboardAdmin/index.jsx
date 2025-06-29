@@ -8,6 +8,7 @@ import { getAllPengaduan } from '../../Services/pengaduan.service';
 import PetaniAdmin from '../../layouts/PetaniAdmin';
 import PengaduanAdminMasyarakat from '../../layouts/PengaduanMasyarakatAdmin';
 import PengaduanPetaniAdmin from '../../layouts/PengaduanPetaniAdmin';
+import { useAuth } from '../../hooks/useAuth';
 
 const DashboardAdmin = () => {
   const [petani, setPetani] = useState([]);
@@ -28,6 +29,8 @@ const DashboardAdmin = () => {
   useEffect(() => {
     fetchData();
   }, []);
+
+  const loginActivity = useAuth();
 
   return (
     <div>

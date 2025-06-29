@@ -32,12 +32,12 @@ const PengaduanPetaniAdmin = ({ pengaduan, refreshPengaduan }) => {
         <table className='w-full mt-5 border-collapse'>
           <thead>
             <tr className='border-b-1 border-gray-300 uppercase text-base bg-black text-white'>
-              <th className='py-2'>No</th>
+              <th className='py-2 pl-2'>No</th>
               <th className='py-2'>Detail</th>
               <th className='py-2'>Waktu</th>
               <th className='py-2'>Kategori</th>
               <th className='py-2'>Status</th>
-              <th className='py-2'>Action</th>
+              <th className='py-2 pr-2'>Action</th>
             </tr>
           </thead>
           <tbody>
@@ -66,9 +66,6 @@ const PengaduanPetaniAdmin = ({ pengaduan, refreshPengaduan }) => {
                     </td>
                     <td className='py-3 pl-4 align-middle'>
                       <div className='flex items-center gap-2'>
-                        <Button>
-                          <EditIcon width={25} height={25} fill='#eab308' />
-                        </Button>
                         {data.status_pengaduan === 0 && (
                           <Button
                             onClick={() => handleStatus(data.pengaduan_id)}
