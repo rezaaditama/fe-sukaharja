@@ -4,7 +4,7 @@ import Button from '../../components/Button';
 import Modal from '../../components/Modal';
 import Input from '../../components/Input/Index';
 
-const DataPetaniSection = () => {
+const DataPetaniSection = ({ type }) => {
   const [petani, setPetani] = useState([]);
   const [showModal, setShowModal] = useState(false);
 
@@ -31,14 +31,12 @@ const DataPetaniSection = () => {
 
     try {
       await postPetani(value);
-      console.log(value);
       alert('Data berhasil dikirim');
       setShowModal(false);
       const response = await getAllPetani();
       setPetani(response.data);
     } catch (error) {
       console.error('Gagal mengirim data:', error);
-      console.log(value);
       alert('Terjadi kesalahan saat mengirim data.');
     }
   };
@@ -52,12 +50,12 @@ const DataPetaniSection = () => {
         <table className='w-full mt-7 border-collapse'>
           <thead>
             <tr className='border-b-1 border-gray-300 uppercase text-base bg-black text-white'>
-              <th>No</th>
-              <th>NIK</th>
-              <th>Nama</th>
-              <th>Alamat</th>
-              <th>Nama Bunga</th>
-              <th>Status</th>
+              <th className='py-2'>No</th>
+              <th className='py-2'>NIK</th>
+              <th className='py-2'>Nama</th>
+              <th className='py-2'>Alamat</th>
+              <th className='py-2'>Nama Bunga</th>
+              <th className='py-2'>Status</th>
             </tr>
           </thead>
           <tbody>
@@ -87,12 +85,14 @@ const DataPetaniSection = () => {
           </tbody>
         </table>
       </div>
-      <div className='w-full flex justify-center bg-black text-white py-1 space-x-2 mt-2'>
-        <h1>Apakah anda tertarik untuk menjadi petani?</h1>
-        <Button type={'button'} onClick={() => setShowModal(true)}>
-          Daftar Sekarang
-        </Button>
-      </div>
+      {type !== 'admin' && (
+        <div className='w-full flex justify-center bg-black text-white py-1 space-x-2 mt-2'>
+          <h1>Apakah anda tertarik untuk menjadi petani?</h1>
+          <Button type={'button'} onClick={() => setShowModal(true)}>
+            Daftar Sekarang
+          </Button>
+        </div>
+      )}
       {showModal && (
         <Modal onClose={() => setShowModal(null)}>
           <div>
@@ -123,13 +123,31 @@ const DataPetaniSection = () => {
               placeholder='Alamat'
               required
             />
-            <Input
-              label={'Nama Bunga Yang Akan Ditanam'}
-              id={'nama_bunga'}
-              type='text'
-              placeholder='Nama Bunga'
-              required
-            />
+            <label htmlFor='nama_bunga' className='font-bold'>
+              Nama Bunga Yang Ditanam
+            </label>
+            <select
+              name='nama_bunga'
+              id='nama_bunga'
+              className='w-full border rounded px-3 py-2 capitalize'
+            >
+              <option value='philodendron billietiae'>
+                philodendron billietiae
+              </option>
+              <option value='Monstera Marble'>Monstera Marble</option>
+              <option value='anthurium king spades'>
+                anthurium king spades
+              </option>
+              <option value='anthurium red crystallinum'>
+                anthurium red crystallinum
+              </option>
+              <option value='anthurium king clarinervium'>
+                anthurium king clarinervium
+              </option>
+              <option value='anthurium king of spades x crystallinum'>
+                anthurium king of spades x crystallinum
+              </option>
+            </select>
             <div className='gap-2 mt-3 flex'>
               <Button
                 type='button'

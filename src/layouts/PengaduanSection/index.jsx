@@ -3,9 +3,31 @@ import MasyarakatIcon from '../../../public/assets/icons/masyarakatIcon';
 import PetaniIcon from '../../../public/assets/icons/PetaniIcon';
 import Button from '../../components/Button';
 import Modal from '../../components/Modal';
+import { createPengaduan } from '../../Services/pengaduan.service';
 
 const PengaduanSection = () => {
   const [modalType, setModalType] = useState(null);
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const value = {
+      detail_pengaduan: e.target.detail_pengaduan.value,
+      kategori_pengaduan: e.target.kategori_pengaduan.value,
+      jenis_pengaduan: modalType,
+    };
+
+    try {
+      await createPengaduan(value);
+      console.log(value);
+      alert('Data berhasil dikirim');
+      setModalType(false);
+    } catch (error) {
+      console.error('Gagal mengirim data:', error);
+      console.log(value);
+      alert('Terjadi kesalahan saat mengirim data.');
+    }
+  };
+
   return (
     <div
       className='min-h-screen p-10 flex flex-col justify-center gap-10'
@@ -77,18 +99,25 @@ const PengaduanSection = () => {
           <h2 className='text-xl font-bold text-center mb-4 uppercase'>
             Form Pengaduan {modalType === 'petani' ? 'Petani' : 'Masyarakat'}
           </h2>
-          <form className='space-y-4'>
+          <form className='space-y-4' onSubmit={handleSubmit}>
             <div>
-              <label className='block text-sm font-semibold mb-1'>
+              <label
+                className='block text-sm font-semibold mb-1'
+                htmlFor='kategori_pengaduan'
+              >
                 Kategori
               </label>
-              <select className='w-full border rounded px-3 py-2'>
+              <select
+                className='w-full border rounded px-3 py-2'
+                id='kategori_pengaduan'
+                name='kategori_pengaduan'
+              >
                 {modalType === 'petani' ? (
                   <>
-                    <option value='gagal_panen'>Gagal Panen</option>
+                    <option value='gagal panen'>Gagal Panen</option>
                     <option value='pupuk'>Sulit Mendapatkan Pupuk</option>
                     <option value='alat'>Kekurangan Alat</option>
-                    <option value='lain_lain'>Lain-lain</option>
+                    <option value='lain-lain'>Lain-lain</option>
                   </>
                 ) : (
                   <>
@@ -106,6 +135,8 @@ const PengaduanSection = () => {
               </label>
               <textarea
                 rows={4}
+                id='detail_pengaduan'
+                name='detail_pengaduan'
                 className='w-full border rounded px-3 py-2'
                 placeholder={`Tuliskan detail pengaduan ${
                   modalType === 'petani' ? 'petani' : 'masyarakat'
