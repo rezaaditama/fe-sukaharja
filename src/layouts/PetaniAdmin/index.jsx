@@ -6,7 +6,6 @@ import { deletePetaniByNik, updatePetani } from '../../Services/petani.service';
 import DeleteIcon from '../../../public/assets/icons/DeleteIcon';
 
 const PetaniAdmin = ({ petani, refreshPetani }) => {
-  const [showModal, setShowModal] = useState(false);
   const [petaniList, setPetaniList] = useState([]);
 
   useEffect(() => {
@@ -38,12 +37,12 @@ const PetaniAdmin = ({ petani, refreshPetani }) => {
   };
 
   return (
-    <div id='dataPetaniSection' className='w-full px-5'>
+    <div id='dataPetani' className='w-full px-5'>
       <h1 className='text-center font-bold uppercase text-3xl border-b-1 pb-2 border-gray-300'>
         Data Petani
       </h1>
       <div className=''>
-        <table className='w-full mt-7 border-collapse'>
+        <table className='w-full mt-5 border-collapse'>
           <thead>
             <tr className='border-b-1 border-gray-300 uppercase text-base bg-black text-white'>
               <th className='py-2'>No</th>

@@ -6,6 +6,8 @@ import { useEffect, useState } from 'react';
 import { getAllPetani } from '../../Services/petani.service';
 import { getAllPengaduan } from '../../Services/pengaduan.service';
 import PetaniAdmin from '../../layouts/PetaniAdmin';
+import PengaduanAdminMasyarakat from '../../layouts/PengaduanMasyarakatAdmin';
+import PengaduanPetaniAdmin from '../../layouts/PengaduanPetaniAdmin';
 
 const DashboardAdmin = () => {
   const [petani, setPetani] = useState([]);
@@ -34,10 +36,18 @@ const DashboardAdmin = () => {
         <div className='col-span-2'>
           <Sidebar />
         </div>
-        <main className='col-span-6 px-10 space-y-2'>
+        <main className='col-span-6 px-10 space-y-10 mb-16'>
           <DiagramSection petani={petani} pengaduan={pengaduan} />
           <QuickResponse petani={petani} pengaduan={pengaduan} />
           <PetaniAdmin petani={petani} refreshPetani={fetchData} />
+          <PengaduanAdminMasyarakat
+            pengaduan={pengaduan}
+            refreshPengaduan={fetchData}
+          />
+          <PengaduanPetaniAdmin
+            pengaduan={pengaduan}
+            refreshPengaduan={fetchData}
+          />
         </main>
       </div>
     </div>

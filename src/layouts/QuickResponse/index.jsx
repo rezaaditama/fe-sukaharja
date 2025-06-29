@@ -7,10 +7,13 @@ const QuickResponse = ({ petani, pengaduan }) => {
   const jumlahPetani = petani.length;
   const jumlahPengaduan = pengaduan.length;
   return (
-    <div className='border border-gray-300 p-5 rounded-xl space-y-3'>
+    <div
+      id='quickResponse'
+      className='border border-gray-300 p-5 rounded-xl space-y-3'
+    >
       <h1 className='text-center font-bold text-2xl'>Quick Respon</h1>
       <div className='grid grid-cols-2 gap-5'>
-        <InformationCard label='Petani' variant='black' jumlah={jumlahPetani}>
+        <InformationCard label='petani' variant='black' jumlah={jumlahPetani}>
           <PetaniIcon
             width={70}
             height={70}
@@ -18,7 +21,7 @@ const QuickResponse = ({ petani, pengaduan }) => {
             className='hover:scale-125 transition duration-300'
           />
         </InformationCard>
-        <InformationCard label='Pengaduan' jumlah={jumlahPengaduan}>
+        <InformationCard label='pengaduan' jumlah={jumlahPengaduan}>
           <MasyarakatIcon
             width={90}
             height={90}

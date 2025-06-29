@@ -1,6 +1,4 @@
-import Button from '../Button';
-
-const InformationCard = ({ children, label, jumlah, onClick, variant }) => {
+const InformationCard = ({ children, label, jumlah, variant }) => {
   return (
     <div
       className={`w-full rounded-xl text-center h-[30vh] flex justify-evenly flex-row items-center ${
@@ -9,18 +7,18 @@ const InformationCard = ({ children, label, jumlah, onClick, variant }) => {
     >
       <div className=''>
         <h1 className='font-bold text-2xl uppercase'>Data {label}</h1>
-        <p className='text-base'>
+        <p className='text-base capitalize mb-2'>
           Jumlah {label} Saat ini : {jumlah}
         </p>
-        <Button
-          className={`bg-white text-black w-full py-1 mt-1 ${
+
+        <a
+          href={label === 'petani' ? '#dataPetani' : '#pengaduanMasyarakat'}
+          className={` text-black w-full py-1  px-5 rounded-xl mt-1 font-bold ${
             variant === 'black' ? 'bg-white' : 'bg-black text-white'
           }`}
-          type={'button'}
-          onClick={onClick}
         >
           Lihat Laporan
-        </Button>
+        </a>
       </div>
       <div className=''>{children}</div>
     </div>

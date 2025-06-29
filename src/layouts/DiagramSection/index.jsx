@@ -32,7 +32,10 @@ const DiagramSection = ({ petani, pengaduan }) => {
   }, []);
   const COLORS = ['#1e3a8a', '#0f172a'];
   return (
-    <div className='mt-10 border border-gray-300 space-y-2 p-5 shadow rounded-xl'>
+    <div
+      id='statistikDiagram'
+      className='mt-10 border border-gray-300 space-y-2 p-5 shadow rounded-xl'
+    >
       <h1 className='text-center font-bold text-2xl'>Statistik Diagram</h1>
       <div className='grid grid-cols-3 gap-5'>
         <div className='rounded-xl shadow border border-gray-300 p-5 space-y-2 col-span-2'>

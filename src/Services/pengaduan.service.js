@@ -22,3 +22,15 @@ export const getAllPengaduan = async () => {
     throw error;
   }
 };
+
+export const updatePengaduan = async (nik) => {
+  try {
+    const response = await axios.put(
+      `http://localhost:4001/api/pengaduan/update-pengaduan/${nik}`
+    );
+    return response.data;
+  } catch (error) {
+    console.log('error : ' + error);
+    throw error;
+  }
+};
