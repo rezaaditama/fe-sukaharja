@@ -1,9 +1,42 @@
 import EditIcon from '/public/assets/icons/EditIcon';
-import DeleteIcon from '/public/assets/icons/DeleteIcon';
 import Button from '../../components/Button';
 import ChecklistIcon from '../../../public/assets/icons/ChecklistIcon';
+import { useEffect, useState } from 'react';
+import { deletePetaniByNik, updatePetani } from '../../Services/petani.service';
+import DeleteIcon from '../../../public/assets/icons/DeleteIcon';
 
-const PetaniAdmin = ({ petani }) => {
+const PetaniAdmin = ({ petani, refreshPetani }) => {
+  const [showModal, setShowModal] = useState(false);
+  const [petaniList, setPetaniList] = useState([]);
+
+  useEffect(() => {
+    setPetaniList(petani);
+  }, [petani]);
+
+  const handleDelete = async (nik) => {
+    const data = Number(nik);
+    try {
+      await deletePetaniByNik(data);
+      await refreshPetani();
+      alert('Data berhasil dihapus');
+    } catch (error) {
+      console.error('Gagal mengirim data:', error);
+      alert('Terjadi kesalahan saat mengirim data.');
+    }
+  };
+
+  const handleStatus = async (nik) => {
+    const data = Number(nik);
+    try {
+      await updatePetani(data);
+      await refreshPetani();
+      alert('Data berhasil diverifikasi');
+    } catch (error) {
+      console.error('Gagal mengirim data:', error);
+      alert('Terjadi kesalahan saat mengirim data.');
+    }
+  };
+
   return (
     <div id='dataPetaniSection' className='w-full px-5'>
       <h1 className='text-center font-bold uppercase text-3xl border-b-1 pb-2 border-gray-300'>
@@ -23,7 +56,7 @@ const PetaniAdmin = ({ petani }) => {
             </tr>
           </thead>
           <tbody>
-            {petani.map((data, index) => {
+            {petaniList.map((data, index) => {
               return (
                 <tr
                   key={data.nik_petani}
@@ -48,11 +81,11 @@ const PetaniAdmin = ({ petani }) => {
                       <Button>
                         <EditIcon width={25} height={25} fill='#eab308' />
                       </Button>
-                      <Button>
+                      <Button onClick={() => handleDelete(data.nik_petani)}>
                         <DeleteIcon width={25} height={25} fill='#ef4444' />
                       </Button>
                       {data.status === 0 && (
-                        <Button>
+                        <Button onClick={() => handleStatus(data.nik_petani)}>
                           <ChecklistIcon
                             width={25}
                             height={25}

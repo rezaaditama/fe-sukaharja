@@ -24,3 +24,27 @@ export const postPetani = async (data) => {
     throw error;
   }
 };
+
+export const deletePetaniByNik = async (nik) => {
+  try {
+    const response = await axios.delete(
+      `http://localhost:4001/api/petani/delete-petani/${nik}`
+    );
+    return response.data;
+  } catch (error) {
+    console.log('error : ' + error);
+    throw error;
+  }
+};
+
+export const updatePetani = async (nik) => {
+  try {
+    const response = await axios.put(
+      `http://localhost:4001/api/petani/update-petani/${nik}`
+    );
+    return response.data;
+  } catch (error) {
+    console.log('error : ' + error);
+    throw error;
+  }
+};

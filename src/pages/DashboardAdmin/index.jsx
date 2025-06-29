@@ -11,21 +11,22 @@ const DashboardAdmin = () => {
   const [petani, setPetani] = useState([]);
   const [pengaduan, setPengaduan] = useState([]);
 
+  const fetchData = async () => {
+    try {
+      const petaniResponse = await getAllPetani();
+      setPetani(petaniResponse.data);
+
+      const pengaduanResponse = await getAllPengaduan();
+      setPengaduan(pengaduanResponse.data);
+    } catch (error) {
+      console.error('Gagal mengambil data:', error);
+    }
+  };
+
   useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const petaniResponse = await getAllPetani();
-        setPetani(petaniResponse.data);
-
-        const pengaduanResponse = await getAllPengaduan();
-        setPengaduan(pengaduanResponse.data);
-      } catch (error) {
-        console.error('Gagal mengambil data:', error);
-      }
-    };
-
     fetchData();
   }, []);
+
   return (
     <div>
       <Navbar type='admin' className='bg-black' />
@@ -36,7 +37,7 @@ const DashboardAdmin = () => {
         <main className='col-span-6 px-10 space-y-2'>
           <DiagramSection petani={petani} pengaduan={pengaduan} />
           <QuickResponse petani={petani} pengaduan={pengaduan} />
-          <PetaniAdmin petani={petani} />
+          <PetaniAdmin petani={petani} refreshPetani={fetchData} />
         </main>
       </div>
     </div>
