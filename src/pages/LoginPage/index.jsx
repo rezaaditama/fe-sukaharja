@@ -41,10 +41,7 @@ const LoginPage = () => {
   };
 
   return (
-    <Banner
-      path_img={'/public/assets/img/kelurahan.png'}
-      className={'min-h-screen'}
-    >
+    <Banner path_img={'/assets/img/kelurahan.png'} className={'min-h-screen'}>
       <Navbar type={'admin'} />
       <Overlay>
         <div className='relative shadow-2xl w-4/5 p-6 rounded-md md:w-1/3 inset-0 bg-white bg-opacity-50 mt-6'>

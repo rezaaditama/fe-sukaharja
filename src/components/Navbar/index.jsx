@@ -23,7 +23,7 @@ const Navbar = ({ activeSection, type, className = '' }) => {
       )}
     >
       <div className='flex space-x-4 items-center'>
-        <img src='/public/assets/img/logo.png' alt='Logo' className='w-10' />
+        <img src='/assets/img/logo.png' alt='Logo' className='w-10' />
         <h1 className='uppercase text-2xl'>Sukaharja</h1>
       </div>
       {type === 'user' && (
