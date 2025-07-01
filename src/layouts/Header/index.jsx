@@ -11,10 +11,7 @@ const Header = () => {
   };
   return (
     <div id='header'>
-      <Banner
-        path_img={'/public/assets/img/kelurahan.png'}
-        className={'min-h-screen'}
-      >
+      <Banner path_img={'/assets/img/kelurahan.png'} className={'min-h-screen'}>
         <Overlay>
           <h1 className='text-3xl font-bold text-white'>
             Selamat Datang Di Website <br /> Kelurahan Sukaharja kecamatan
