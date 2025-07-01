@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
 import ChecklistIcon from '../../../public/assets/icons/ChecklistIcon';
 import { updatePengaduan } from '../../Services/pengaduan.service';
-import EditIcon from '../../../public/assets/icons/editIcon';
 import Button from '../../components/Button';
 
 const PengaduanAdminMasyarakat = ({ pengaduan, refreshPengaduan }) => {
