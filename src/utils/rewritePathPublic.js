@@ -5,5 +5,6 @@ export const resolvePublicPath = (filePath) => {
   }
 
   // Kalau tidak diawali "/public", biarkan saja
+  console.log('xxxx', filePath);
   return filePath;
 };
