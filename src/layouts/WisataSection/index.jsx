@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import Button from '../../components/Button';
 import Overlay from '../../components/Overlay';
-import wisataData from '../../data/wisataData.js';
+import wisataData from '../../Data/wisataData.js';
 
 const WisataSection = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
