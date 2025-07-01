@@ -28,7 +28,7 @@ export const postPetani = async (data) => {
 export const deletePetaniByNik = async (nik) => {
   try {
     const response = await axios.delete(
-      `http://localhost:4001/api/petani/delete-petani/${nik}`
+      `http://be-reza-sukaharja.yoggaac.com/api/petani/delete-petani/${nik}`
     );
     return response.data;
   } catch (error) {
@@ -40,7 +40,7 @@ export const deletePetaniByNik = async (nik) => {
 export const updatePetani = async (nik) => {
   try {
     const response = await axios.put(
-      `http://localhost:4001/api/petani/update-petani/${nik}`
+      `http://be-reza-sukaharja.yoggaac.com/api/petani/update-petani/${nik}`
     );
     return response.data;
   } catch (error) {
@@ -52,7 +52,7 @@ export const updatePetani = async (nik) => {
 export const updateDataPetani = async (nik, data) => {
   try {
     const response = await axios.put(
-      `http://localhost:4001/api/petani/update-data-petani/${nik}`,
+      `http://be-reza-sukaharja.yoggaac.com/api/petani/update-data-petani/${nik}`,
       data
     );
     return response.data;

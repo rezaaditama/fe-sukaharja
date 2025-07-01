@@ -41,7 +41,7 @@ const LandingPage = () => {
 
   return (
     <>
-      <Navbar activeSection={activeSection} />
+      <Navbar activeSection={activeSection} type={'user'} />
       <div id='header' ref={headerRef}>
         <Header />
       </div>

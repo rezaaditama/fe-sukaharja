@@ -2,10 +2,13 @@ import Card from '../../components/Card';
 import { useEffect, useState } from 'react';
 import { getAllBunga } from '../../Services/bunga.service';
 import Button from '../../components/Button';
+import Modal from '../../components/Modal';
 
 const BungaSection = () => {
   const [bunga, setBunga] = useState([]);
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [selectedBunga, setSelectedBunga] = useState(null); // Ganti dari modalType
+
   const pageItems = 3;
 
   useEffect(() => {
@@ -57,13 +60,14 @@ const BungaSection = () => {
               name={flower.nama_bunga}
               label='Lihat Detail'
               className='w-full'
+              onClick={() => setSelectedBunga(flower)}
             />
           ))}
         </div>
 
         <Button
           onClick={nextSlide}
-          type={'button'}
+          type='button'
           className={`px-4 py-2 bg-black text-white rounded-full hover:bg-gray-800 cursor-pointer ${
             currentIndex + pageItems >= bunga.length ? 'invisible' : ''
           }`}
@@ -71,6 +75,29 @@ const BungaSection = () => {
           &gt;
         </Button>
       </div>
+
+      {selectedBunga && (
+        <Modal
+          onClose={() => setSelectedBunga(null)}
+          children
+          className={'w-1/2'}
+        >
+          {console.log(selectedBunga)}
+          <div className='text-center p-4 flex flex-col items-center'>
+            <img
+              src={selectedBunga.path}
+              alt={selectedBunga.nama_bunga}
+              className='w-56 h-56 rounded-lg mb-4'
+            />
+            <h2 className='text-xl font-bold mb-2 capitalize'>
+              {selectedBunga.nama_bunga}
+            </h2>
+            <p className='text-gray-600 overflow-y-auto max-h-44 text-justify'>
+              {selectedBunga.manfaat}
+            </p>
+          </div>
+        </Modal>
+      )}
     </div>
   );
 };

@@ -5,6 +5,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import LandingPage from './pages/LandingPage';
 import LoginPage from './pages/LoginPage';
 import DashboardAdmin from './pages/DashboardAdmin';
+import AboutUs from './pages/AboutUs';
 
 const router = createBrowserRouter([
   {
@@ -18,6 +19,10 @@ const router = createBrowserRouter([
   {
     path: '/admin',
     element: <DashboardAdmin />,
+  },
+  {
+    path: '/about',
+    element: <AboutUs />,
   },
 ]);
 

@@ -3,7 +3,7 @@ import axios from 'axios';
 export const createPengaduan = async (data) => {
   try {
     const response = await axios.post(
-      'http://localhost:4001/api/pengaduan/post-pengaduan',
+      'http://be-reza-sukaharja.yoggaac.com/api/pengaduan/post-pengaduan',
       data
     );
     return response.data;
@@ -15,7 +15,9 @@ export const createPengaduan = async (data) => {
 
 export const getAllPengaduan = async () => {
   try {
-    const response = await axios.get('http://localhost:4001/api/pengaduan');
+    const response = await axios.get(
+      'http://be-reza-sukaharja.yoggaac.com/api/pengaduan'
+    );
     return response.data;
   } catch (error) {
     console.log('Error sata fetching data : ', error);
@@ -26,7 +28,7 @@ export const getAllPengaduan = async () => {
 export const updatePengaduan = async (nik) => {
   try {
     const response = await axios.put(
-      `http://localhost:4001/api/pengaduan/update-pengaduan/${nik}`
+      `http://be-reza-sukaharja.yoggaac.com/api/pengaduan/update-pengaduan/${nik}`
     );
     return response.data;
   } catch (error) {

@@ -1,8 +1,14 @@
+import { useNavigate } from 'react-router-dom';
 import Banner from '../../components/Banner';
 import Button from '../../components/Button';
 import Overlay from '../../components/Overlay';
 
 const Header = () => {
+  const navigate = useNavigate();
+
+  const handleAboutUs = () => {
+    navigate('/about');
+  };
   return (
     <div id='header'>
       <Banner
@@ -14,7 +20,11 @@ const Header = () => {
             Selamat Datang Di Website <br /> Kelurahan Sukaharja kecamatan
             Cijeruk Kabupaten Bogor
           </h1>
-          <Button type={'button'} className={'bg-white text-black py-2 px-3'}>
+          <Button
+            onClick={handleAboutUs}
+            type={'button'}
+            className={'bg-white text-black py-2 px-3'}
+          >
             Tentang Kami
           </Button>
         </Overlay>

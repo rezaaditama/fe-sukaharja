@@ -1,7 +1,7 @@
 import { twMerge } from 'tailwind-merge';
 import Button from '../Button';
 
-const Card = ({ src, name, label, className = '' }) => {
+const Card = ({ src, name, label, className = '', onClick }) => {
   return (
     <div
       className={twMerge(
@@ -11,7 +11,11 @@ const Card = ({ src, name, label, className = '' }) => {
     >
       <img src={src} alt={name} className='w-full object-contain h-72' />
       <h1 className='font-bold text-lg capitalize'>{name}</h1>
-      <Button type={'button'} className={'bg-black text-white w-3/4 py-2'}>
+      <Button
+        type={'button'}
+        className={'bg-black text-white w-3/4 py-2'}
+        onClick={onClick}
+      >
         {label}
       </Button>
     </div>

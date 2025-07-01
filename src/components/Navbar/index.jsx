@@ -1,4 +1,4 @@
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { twMerge } from 'tailwind-merge';
 import LogoutIcon from '../../../public/assets/icons/LogoutIcon';
 import Button from '../Button';
@@ -26,7 +26,7 @@ const Navbar = ({ activeSection, type, className = '' }) => {
         <img src='/public/assets/img/logo.png' alt='Logo' className='w-10' />
         <h1 className='uppercase text-2xl'>Sukaharja</h1>
       </div>
-      {type !== 'admin' ? (
+      {type === 'user' && (
         <div className='space-x-4 text-base'>
           <a className={isActive('header')} href='#header'>
             Tentang Kami
@@ -34,6 +34,7 @@ const Navbar = ({ activeSection, type, className = '' }) => {
           <a
             className={isActive('potensiBungaSection')}
             href='#potensiBungaSection'
+            d
           >
             Potensi Bunga
           </a>
@@ -50,7 +51,8 @@ const Navbar = ({ activeSection, type, className = '' }) => {
             Laporan Pengaduan
           </a>
         </div>
-      ) : (
+      )}
+      {type === 'admin' && (
         <div className='flex gap-5'>
           <h1 className='uppercase font-bold'>Dashboard Admin</h1>
           {localStorage.getItem('username') && (
@@ -63,6 +65,25 @@ const Navbar = ({ activeSection, type, className = '' }) => {
               />
             </Button>
           )}
+        </div>
+      )}{' '}
+      {type === 'about' && (
+        <div className='space-x-4 text-base'>
+          <Link to={'/'} className={isActive('header')}>
+            Tentang Kami
+          </Link>
+          <Link to={'/'} className={isActive('potensiBungaSection')}>
+            Potensi Bunga
+          </Link>
+          <Link to={'/'} className={isActive('potensiWisataSection')}>
+            Wisata
+          </Link>
+          <Link to={'/'} className={isActive('potensiPetaniSection')}>
+            Petani Lokal
+          </Link>
+          <Link to={'/'} className={isActive('pengaduanSection')}>
+            Laporan Pengaduan
+          </Link>
         </div>
       )}
     </nav>
