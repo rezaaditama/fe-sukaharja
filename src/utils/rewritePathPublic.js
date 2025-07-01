@@ -1,10 +1,11 @@
-export const resolvePublicPath = (filePath) => {
-  // Jika path diawali dengan "/public", hapus bagian itu
-  if (filePath.startsWith('/public')) {
-    return filePath.replace('/public', '');
-  }
+export function resolvePublicPath(filePath) {
+  if (!filePath) return '';
 
-  // Kalau tidak diawali "/public", biarkan saja
-  console.log('xxxx', filePath);
-  return filePath;
-};
+  const cleaned = filePath.startsWith('/public')
+    ? filePath.replace('/public', '')
+    : filePath;
+
+  const result = cleaned.startsWith('/') ? cleaned : '/' + cleaned;
+  console.log('xxxxxxxxxxxxxxxxxxxxxx', result);
+  return result;
+}

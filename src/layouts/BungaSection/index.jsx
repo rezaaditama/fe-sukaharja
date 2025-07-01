@@ -37,6 +37,7 @@ const BungaSection = () => {
   };
 
   const currentItems = bunga.slice(currentIndex, currentIndex + pageItems);
+  console.log('AAAAAAAAAAAAAAAAAAAAAAAAAAAA');
 
   return (
     <div className='w-full px-5 py-10'>
@@ -57,7 +58,7 @@ const BungaSection = () => {
           {currentItems.map((flower, index) => (
             <Card
               key={index}
-              src={flower.path}
+              src={resolvePublicPath(flower.path)}
               name={flower.nama_bunga}
               label='Lihat Detail'
               className='w-full'
