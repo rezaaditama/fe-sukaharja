@@ -3,7 +3,7 @@ import axios from 'axios';
 export const createPengaduan = async (data) => {
   try {
     const response = await axios.post(
-      'http://be-reza-sukaharja.yoggaac.com/api/pengaduan/post-pengaduan',
+      'https://be-reza-sukaharja.yoggaac.com/api/pengaduan/post-pengaduan',
       data
     );
     return response.data;
@@ -16,7 +16,7 @@ export const createPengaduan = async (data) => {
 export const getAllPengaduan = async () => {
   try {
     const response = await axios.get(
-      'http://be-reza-sukaharja.yoggaac.com/api/pengaduan'
+      'https://be-reza-sukaharja.yoggaac.com/api/pengaduan'
     );
     return response.data;
   } catch (error) {
@@ -28,7 +28,7 @@ export const getAllPengaduan = async () => {
 export const updatePengaduan = async (nik) => {
   try {
     const response = await axios.put(
-      `http://be-reza-sukaharja.yoggaac.com/api/pengaduan/update-pengaduan/${nik}`
+      `https://be-reza-sukaharja.yoggaac.com/api/pengaduan/update-pengaduan/${nik}`
     );
     return response.data;
   } catch (error) {
