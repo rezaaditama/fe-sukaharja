@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import { getAllBunga } from '../../Services/bunga.service';
 import Button from '../../components/Button';
 import Modal from '../../components/Modal';
+import { resolvePublicPath } from '../../utils/rewritePathPublic';
 
 const BungaSection = () => {
   const [bunga, setBunga] = useState([]);
@@ -85,7 +86,7 @@ const BungaSection = () => {
           {console.log(selectedBunga)}
           <div className='text-center p-4 flex flex-col items-center'>
             <img
-              src={selectedBunga.path}
+              src={resolvePublicPath(selectedBunga.path)}
               alt={selectedBunga.nama_bunga}
               className='w-56 h-56 rounded-lg mb-4'
             />
